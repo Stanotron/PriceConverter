@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/convert.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/currencies.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/menu_options.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/menu/menu_curr.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
