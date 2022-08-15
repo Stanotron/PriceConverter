@@ -22,17 +22,16 @@ class pcAdapter(val context : Context, var Curr : currency = currency.Usd): Recy
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(position)
     }
 
     override fun getItemCount(): Int {
         return 1;
     }
 
-    inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-        fun bind (position: Int){
-
-        }
+    class ViewHolder(view: View): RecyclerView.ViewHolder(view){
+        val TVamount = view.tvAmount
+        val TVout = view.tvOut
+        val TVconvert = view.tvConvert
     }
 
 }
