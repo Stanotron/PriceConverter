@@ -3,13 +3,13 @@ package com.example.priceconverter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.RadioGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.convert.*
 
 class MainActivity : AppCompatActivity() {
     private var Currency : currency = currency.Usd
@@ -23,6 +23,11 @@ class MainActivity : AppCompatActivity() {
             var out : Double = Calculate(Amount)
             tvOut.text = out.toString()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_curr,menu)
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -68,31 +73,36 @@ class MainActivity : AppCompatActivity() {
     private fun Setup(){
         when(Currency){
             currency.Euro -> {
-                tvAmount.text = "Enter the amount in INR:-"
+                tvAmount.text = "Enter the amount in INR ₹ :-"
                 tvConvert.text = "Amount in Euro € :-"
+                tvOut.text = "0.00"
+                etAmount.hint = "0.00"
             }
             currency.Usd ->{
-                tvAmount.text = "Enter the amount in INR:-"
-                tvConvert.text = "Amount in UD Dollar $ :-"
+                tvAmount.text = "Enter the amount in INR ₹ :-"
+                tvConvert.text = "Amount in US Dollar $ :-"
+                etAmount.hint = "0.00"
+                tvOut.text = "0.00"
             }
             currency.Pound -> {
-                tvAmount.text = "Enter the amount in INR:-"
+                tvAmount.text = "Enter the amount in INR ₹ :-"
                 tvConvert.text = "Amount in Pound £ :-"
+                etAmount.hint = "0.00"
+                tvOut.text = "0.00"
             }
             currency.Yen -> {
-                tvAmount.text = "Enter the amount in INR:-"
+                tvAmount.text = "Enter the amount in INR ₹ :-"
+                etAmount.hint = "0.00"
                 tvConvert.text = "Amount in Yen ¥ :-"
+                tvOut.text = "0.00"
             }
         }
-        rvConvert.layoutManager = LinearLayoutManager(this)
-        val cAdapter = pcAdapter(this,Currency)
-        rvConvert.adapter = cAdapter
     }
 
     private fun Calculate(amount: Double): Double {
         var back : Double = 0.0
         if(tvConvert.text == "Amount in Euro € :-") back = amount / 82.17
-        else if (tvConvert.text =="Amount in UD Dollar $ :-") back = amount / 79.59
+        else if (tvConvert.text =="Amount in US Dollar $ :-") back = amount / 79.59
         else if (tvConvert.text == "Amount in Pound £ :-") back = amount / 97.07
         else if (tvConvert.text == "Amount in Yen ¥ :-") back= amount / 0.60
         return back
