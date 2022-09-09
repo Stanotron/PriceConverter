@@ -2,16 +2,29 @@ package com.example.priceconverter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.json.JSONObject
+import java.net.URL
+
 
 class MainActivity : AppCompatActivity() {
+
+    var baseCurrency = "EUR"
+    var convertedToCurrency = "USD"
+    var conversionRate = 0f
+
     private var Currency : currency = currency.Usd
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -106,5 +119,40 @@ class MainActivity : AppCompatActivity() {
         else if (tvConvert.text == "Amount in Pound £ :-") back = amount / 97.07
         else if (tvConvert.text == "Amount in Yen ¥ :-") back= amount / 0.60
         return back
+    }
+
+    private fun getApiResult(){
+        if(etAmount!=null && etAmount.text.isNotEmpty() && etAmount.text.isNotBlank()){
+            val API = "https://api.exchangeratesapi.io/v1/latest\n" +
+                    "    ? access_key = API_KEY\n" +
+                    "    & base = $baseCurrency\n" +
+                    "    & symbols = $convertedToCurrency"
+            if(baseCurrency==convertedToCurrency){
+                Toast.makeText(
+                    applicationContext,
+                    "Cannot convert the same currecny",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            else{
+                  GlobalScope.launch(Dispatchers.IO){
+                      try{
+                          val apiResult = URL(API).readText()
+                          val jsonObject = JSONObject(apiResult)
+
+                          conversionRate = jsonObject.getJSONObject("rates").getString(convertedToCurrency).toFloat()
+                          Log.d("Main","$conversionRate")
+                          Log.d("Main",apiResult)
+                          withContext(Dispatchers.Main){
+                              val text = ((etAmount.text.toString().toFloat()) * conversionRate).toString()
+                              tvOut?.setText(text)
+                          }
+                      }
+                      catch (e:Exception){
+                          Log.e("Main","$e")
+                      }
+                  }
+            }
+        }
     }
 }
