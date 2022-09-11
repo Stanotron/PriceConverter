@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/drawable/gradient.xml" value="0.1065" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/activity_splash_screen.xml" value="0.18070652173913043" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/convert.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/currencies.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/PriceConverter/app/src/main/res/layout/menu_options.xml" value="0.24895833333333334" />
