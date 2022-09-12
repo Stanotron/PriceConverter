@@ -3,20 +3,21 @@ package com.example.priceconverter
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.priceconverter.databinding.ActivityMainBinding
+//import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
 import java.net.URL
+
+private lateinit var binding: ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +30,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 //        overridePendingTransition(R.drawable.fade_in, R.drawable.fade_out)
         val view: View = findViewById(android.R.id.content)
         val mLoadAnimation: Animation = AnimationUtils.loadAnimation(applicationContext, android.R.anim.fade_in)
@@ -38,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         textChanged()
     }
     private fun getApiResult(){
-        if(etAmount!=null && etAmount.text.isNotEmpty() && etAmount.text.isNotBlank()){
+        if(binding.etAmount!=null && binding.etAmount.text.isNotEmpty() && binding.etAmount.text.isNotBlank()){
             val API = "https://api.exchangerate.host/latest?base=$baseCurrency"
             Log.d("ApI","$API")
 
@@ -59,8 +62,8 @@ class MainActivity : AppCompatActivity() {
                           Log.d("Main","$conversionRate")
                           Log.d("Main",apiResult)
                           withContext(Dispatchers.Main){
-                              val text = ((etAmount.text.toString().toFloat()) * conversionRate).toString()
-                              tvOut?.setText(text)
+                              val text = ((binding.etAmount.text.toString().toFloat()) * conversionRate).toString()
+                              binding.tvOut?.setText(text)
                           }
                       }
                       catch (e:Exception){
@@ -119,7 +122,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun textChanged(){
-        btnConvert.setOnClickListener{
+        binding.btnConvert.setOnClickListener{
             try{
                 getApiResult()
             }catch (e:Exception){
