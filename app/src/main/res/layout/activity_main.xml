@@ -23,7 +23,7 @@
             android:id="@+id/tvAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="23dp"
             android:layout_marginTop="60dp"
             android:fontFamily="@font/lato"
             android:text="From Currency"
@@ -34,7 +34,7 @@
             android:id="@+id/firstspinner"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="18dp"
             android:layout_marginTop="110dp"
             android:dropDownHeight="20dp"
             android:minHeight="48dp"
@@ -42,6 +42,12 @@
             app:layout_constraintStart_toEndOf="@id/tvAmount"
             tools:ignore="SpeakableTextPresentCheck" />
 
+<!--        <ImageView-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:background="@drawable/arrow"-->
+<!--            android:layout_marginLeft="190dp"-->
+<!--            android:layout_marginTop="55dp"/>-->
 
         <EditText
             android:id="@+id/etAmount"
@@ -60,7 +66,7 @@
             android:id="@+id/tvConvert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="220dp"
+            android:layout_marginLeft="240dp"
             android:layout_marginTop="60dp"
             android:text="To Currency"
             android:fontFamily="@font/lato"
@@ -71,7 +77,7 @@
             android:id="@+id/secondspinner"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="220dp"
+            android:layout_marginLeft="235dp"
             android:layout_marginTop="110dp"
             android:minHeight="48dp"
             android:textSize="22dp"
@@ -87,10 +93,9 @@
             android:layout_marginTop="420dp"
             android:hint="0.00"
             android:minHeight="48dp"
-            android:textColor="@color/black"
+            android:textColor="#FF03DAC5"
             android:fontFamily="@font/lato"
-
-            android:textSize="25dp" />
+            android:textSize="28dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,7 +111,7 @@
             android:id="@+id/btnConvert"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="520dp"
+            android:layout_marginTop="545dp"
             android:layout_marginHorizontal="70dp"
             android:backgroundTint="#FF03DAC5"
             android:text="convert"
@@ -114,38 +119,45 @@
             android:textColor="@android:color/white"
             android:textSize="16dp" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_marginTop="455dp"
-            android:alpha="0.45"
-            android:layout_marginHorizontal="39dp"
-            android:background="@color/black"
-            android:layout_height="1dp"
-            />
+<!--        <View-->
+<!--            android:id="@+id/divider"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="455dp"-->
+<!--            android:alpha="0.45"-->
+<!--            android:layout_marginHorizontal="39dp"-->
+<!--            android:background="@color/black"-->
+<!--            android:layout_height="1dp"-->
+<!--            />-->
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="85dp"
-            android:layout_marginTop="600dp"
-            android:alpha="0.5"
-            android:fontFamily="@font/archivo_black"
-            android:hint="DeciCon"
             android:textAlignment="center"
+            android:layout_marginTop="645dp"
+            android:alpha="0.6"
+            android:fontFamily="@font/archivo_black"
+            android:hint="All Rights Reserved © DeciCon"
             android:textColor="@color/black"
-            android:textSize="45dp" />
+        android:textSize="17dp" />
 
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="602dp"
-            android:layout_marginLeft="286dp"
-            android:alpha="0.40"
-            android:background="@drawable/reg"/>
+<!--        <ImageView-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginTop="612dp"-->
+<!--            android:layout_marginLeft="286dp"-->
+<!--            android:alpha="0.40"-->
+<!--            android:background="@drawable/reg"/>-->
 
-
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="1dp"
+            android:alpha="0.45"
+            android:layout_marginLeft="197dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="530dp"
+            android:layout_height="match_parent"
+            android:background="#000000" />
 
 
     </androidx.cardview.widget.CardView>

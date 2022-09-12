@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.currencies,
-            R.layout.spinner_item
+            R.layout.spinner_text_style
         ).also { adapter ->
             adapter.setDropDownViewResource(R.layout.spinner_item)
             s1.adapter = adapter
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         ArrayAdapter.createFromResource(
             this,
             R.array.currencies2,
-            R.layout.spinner_item
+            R.layout.spinner_text_style
         ).also { adapter ->
             adapter.setDropDownViewResource(R.layout.spinner_item)
             s2.adapter = adapter
