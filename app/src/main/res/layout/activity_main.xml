@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="60dp"
+            android:fontFamily="@font/lato"
             android:text="From Currency"
             android:textColor="@color/black"
             android:textSize="22dp" />
@@ -49,6 +50,7 @@
             android:layout_marginHorizontal="31dp"
             android:layout_marginTop="240dp"
             android:hint="Amount..."
+            android:fontFamily="@font/lato"
             android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:textColor="@color/black"
@@ -61,6 +63,7 @@
             android:layout_marginLeft="220dp"
             android:layout_marginTop="60dp"
             android:text="To Currency"
+            android:fontFamily="@font/lato"
             android:textColor="@color/black"
             android:textSize="22dp" />
 
@@ -85,6 +88,8 @@
             android:hint="0.00"
             android:minHeight="48dp"
             android:textColor="@color/black"
+            android:fontFamily="@font/lato"
+
             android:textSize="25dp" />
 
         <TextView
@@ -93,6 +98,7 @@
             android:layout_marginHorizontal="34dp"
             android:layout_marginTop="360dp"
             android:text="Result -"
+            android:fontFamily="@font/lato"
             android:textColor="@color/black"
             android:textSize="25dp" />
 
@@ -100,12 +106,47 @@
             android:id="@+id/btnConvert"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="560dp"
+            android:layout_marginTop="520dp"
             android:layout_marginHorizontal="70dp"
             android:backgroundTint="#FF03DAC5"
             android:text="convert"
+            android:fontFamily="@font/lato"
             android:textColor="@android:color/white"
             android:textSize="16dp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_marginTop="455dp"
+            android:alpha="0.45"
+            android:layout_marginHorizontal="39dp"
+            android:background="@color/black"
+            android:layout_height="1dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="85dp"
+            android:layout_marginTop="600dp"
+            android:alpha="0.5"
+            android:fontFamily="@font/archivo_black"
+            android:hint="DeciCon"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="45dp" />
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="602dp"
+            android:layout_marginLeft="286dp"
+            android:alpha="0.40"
+            android:background="@drawable/reg"/>
+
+
+
 
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
